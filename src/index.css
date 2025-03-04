@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 4.9% 96.1%; /* Soft Gray */
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* Purple Gradient Theme */
+    --primary: 263.9 85% 60.6%; /* Vibrant Purple */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 252 72% 80%; /* Lighter Purple */
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 258 60% 90%; /* Very Light Purple */
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 260 100% 95%; /* Lightest Purple */
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 255 50% 95%; /* Light Purple Border */
+    --input: 255 50% 95%; /* Light Purple Input */
+    --ring: 263.9 85% 60.6%;
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+  }
+
+  .glass-panel {
+    @apply bg-white/60 backdrop-blur-md border border-white/10 shadow-lg;
+  }
+
+  .animate-in {
+    animation: animateIn 0.3s ease-out;
+  }
+
+  .animate-out {
+    animation: animateOut 0.3s ease-in;
+  }
+
+  @keyframes animateIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes animateOut {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  }
+}
